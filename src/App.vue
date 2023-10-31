@@ -1,28 +1,45 @@
 <template>
   <div class="view login">
-    <form class="view chat">
-      <h1>Login to FireChat</h1>
-      <label for="username">Username</label>
-      <input type="text" placeholder="Please enter your username.... " />
-      <input type="submit" value="Login" />
+    <form class="login-form">
+      <div class="form-inner">
+        <h1>Login to FireChat</h1>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          v-model="inputUsername"
+          placeholder="Please enter your username.... "
+        />
+        <input type="submit" value="Login" />
+      </div>
     </form>
   </div>
-  
 </template>
 
 <script>
+import { reactive, onMounted, ref } from "vue";
 import db from "./db";
 export default {
   setup() {
-    return {};
+    const inputUsername = ref("");
+    const state = reactive({
+      username: "",
+    })
+    const Login = () =>{
+      if(inputUsername.value != "" || inputUsername.value != null){
+        state
+      }
+    }
+    return {
+      inputUsername,
+    };
   },
 };
 </script>
 
-<style lang="scss"> 
+<style lang="scss">
 * {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing:antialiassed;
+  -webkit-font-smoothing: antialiassed;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
@@ -223,7 +240,7 @@ export default {
             transition: 0.4s;
           }
         }
-        input[type="text"]{
+        input[type="text"] {
           appearance: none;
           border: none;
           outline: none;
