@@ -314,7 +314,7 @@ export default {
             transition: 0.4s;
           }
         }
-        input[type="text"] {
+        input[type="submit"] {
           appearance: none;
           border: none;
           outline: none;
