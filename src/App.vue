@@ -1,4 +1,5 @@
 <template>
+  
   <div class="view login">
     <form class="login-form">
       <div class="form-inner">
@@ -12,7 +13,12 @@
         <input type="submit" value="Login" />
       </div>
     </form>
+
+    <div class="view chat">
+      
+    </div>
   </div>
+  
 </template>
 
 <script>
@@ -30,6 +36,7 @@ export default {
       }
     }
     return {
+      db,
       inputUsername,
     };
   },
